@@ -6,13 +6,20 @@ const misses = document.querySelector('.misses');
 
 let missed = 0;
 
+//arrays
+const gameSongPhrases = [
+    'It Was A Good Day',
+    'Rapstar',
+    'Rebel Without A Pause',
+    'Hypnotize',
+    'Calling My Phone',
+    'My Name Is'
+  ];
+  
+
 // return a random phrase from an array
 const getRandomPhraseAsArray = arr => {
-'Code everyday my friend',
-'Keep a growth mindset',
-'Never give up',
-'Consistently learn new skills',
-'Enjoy the process'
+
 };
 
 // adds the letters of a string to the display 

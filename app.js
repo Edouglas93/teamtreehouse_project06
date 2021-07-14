@@ -2,7 +2,8 @@ const keyboard = document.querySelector('#qwerty');
 const phrase = document.querySelector('#phrase');
 const startButton = document.querySelector('.btn__reset');
 const tries = document.querySelectorAll('.tries');
-const misses = document.querySelector('.misses');
+const misses = 'images/lostHeart.png';
+
 
 let missed = 0;
 
@@ -15,17 +16,34 @@ const gameSongPhrases = [
     'Calling My Phone',
     'My Name Is'
   ];
-  
 
 // return a random phrase from an array
 const getRandomPhraseAsArray = arr => {
-
+    const randomIndexSelector = Math.floor(Math.random() * arr.length);
+    const randomPhraseSelector = arr[randomIndexSelector];
+    return phraseLetterSplitter = randomPhraseSelector.split('');
 };
+
+const phrasesToLettersArr = getRandomPhraseAsArray(gameSongPhrases);
+
 
 // adds the letters of a string to the display 
 const addPhraseToDisplay = arr => {
+  for (let i = 0; i < arr.length; i++ ) {
+    const li = document.createElement('li');
+    li.textContent = arr[i];
+    const phraseUl = document.querySelector('#phrase ul');
+    phraseUl.appendChild(li);
     
+    if ( li.textContent == '') {
+        li.style.classList.add = '.space';
+    } else {
+        li.style.classList.add = '.letter';
+    }
+  }  
 }
+
+addPhraseToDisplay(phrasesToLettersArr); 
 
 // checks if a letter is in the phrase
 const checkLetter = (button) => {

@@ -13,6 +13,8 @@ let missed = 0;
 
       keyBoardReset()
       livesRestored()
+      const phrasesToLettersArr = getRandomPhraseAsArray(gameSongPhrases);
+      addPhraseToDisplay(phrasesToLettersArr); 
   });
 
 
@@ -33,7 +35,7 @@ const getRandomPhraseAsArray = arr => {
     return phraseLetterSplitter = randomPhraseSelector.split('');
 };
 
-const phrasesToLettersArr = getRandomPhraseAsArray(gameSongPhrases);
+
 
 
 // adds the letters of a string to the display 
@@ -50,8 +52,6 @@ const addPhraseToDisplay = arr => {
     }
   }  
 }
-
-addPhraseToDisplay(phrasesToLettersArr); 
 
 // checks if a letter is in the phrase
 const checkLetter = (button) => {
@@ -103,6 +103,8 @@ const checkLetter = (button) => {
           startButton.textContent = "Try Again!"
           clearPhraseToDisplay()
         }
+
+        
     }
 
     // Clear keys funciton

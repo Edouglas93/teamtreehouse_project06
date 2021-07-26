@@ -95,7 +95,7 @@ const checkLetter = (button) => {
         startButton.textContent = 'Try Again!';
       }
       else if (missed > 4) {
-          overlay.classList.add('lose')
+          overLay.classList.add('lose')
           title.textContent = 'You Are Out of Lives!!';
           overLay.style.display = 'flex';
           startButton.textContent = 'Try Again!';

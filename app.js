@@ -43,7 +43,7 @@ const addPhraseToDisplay = arr => {
     const phraseUl = document.querySelector('#phrase ul');
     phraseUl.appendChild(li);
     
-    if ( arr[i] !== '') {
+    if ( arr[i] !== ' ') {
         li.classList.add("letter");
     } else {
         li.classList.add("space");

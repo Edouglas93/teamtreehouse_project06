@@ -110,6 +110,14 @@ const checkLetter = (button) => {
       }
     }
 
+    // Restore Lives funciton
+    function livesRestored() {
+      for ( let i =0; i < lives.length; i++) {
+        lives[i].src = 'images/liveHeart.png';
+        missed = 0;
+      }
+    }
+
 
 
 

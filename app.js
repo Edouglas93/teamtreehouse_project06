@@ -89,7 +89,7 @@ const checkLetter = (button) => {
       const title = document.querySelector('.title');
       const show = document.querySelectorAll('.show');
       if (lettersFound.length === show.length) {
-        overlay.classList.add('win')
+        overLay.classList.add('win')
         title.textContent = 'Winner Winner Chicken Dinner!';
         overLay.style.display = 'flex';
         startButton.textContent = 'Try Again!';

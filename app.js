@@ -3,6 +3,7 @@ const phrase = document.querySelector('#phrase');
 const startButton = document.querySelector('.btn__reset');
 const overLay = document.querySelector('#overlay');
 const lives = document.querySelectorAll('.tries img') ;
+const li = document.createElement('li');
 
 
 let missed = 0;
@@ -36,7 +37,6 @@ const phrasesToLettersArr = getRandomPhraseAsArray(gameSongPhrases);
 // adds the letters of a string to the display 
 const addPhraseToDisplay = arr => {
   for (let i = 0; i < arr.length; i++ ) {
-    const li = document.createElement('li');
     li.textContent = arr[i];
     const phraseUl = document.querySelector('#phrase ul');
     phraseUl.appendChild(li);

@@ -60,7 +60,7 @@ const checkLetter = (button) => {
     for (i=0; i < lettersFound.length; i++) {
       if (button === lettersFound[i].textContent.toLowerCase()) {
         lettersFound[i].classList.add('show');
-        lettersFound[i].style.transition = '.5s ease-out';
+        lettersFound[i].style.transition = '.1s ease-in';
         matched = true;
       }
     }

@@ -2,7 +2,7 @@ const keyboard = document.querySelector('#qwerty');
 const phrase = document.querySelector('#phrase');
 const startButton = document.querySelector('.btn__reset');
 const overLay = document.querySelector('#overlay');
-const misses = document.querySelectorAll('.tries') ;
+const lives = document.querySelectorAll('.tries img') ;
 
 
 let missed = 0;
@@ -15,11 +15,11 @@ let missed = 0;
 
 //array on song names 
 const gameSongPhrases = [
-    'It Was A Good Day',
+    'Too Much',
     'Rapstar',
-    'Rebel Without A Pause',
+    'One Dance',
     'Hypnotize',
-    'Calling My Phone',
+    'More Life',
     'My Name Is'
   ];
 
@@ -41,10 +41,10 @@ const addPhraseToDisplay = arr => {
     const phraseUl = document.querySelector('#phrase ul');
     phraseUl.appendChild(li);
     
-    if ( li.textContent === '') {
-        li.classList.add('space');
+    if ( arr[i] !== '') {
+        li.classList.add("letter");
     } else {
-        li.classList.add('letter');
+        li.classList.add("space");
     }
   }  
 }
@@ -54,10 +54,10 @@ addPhraseToDisplay(phrasesToLettersArr);
 // checks if a letter is in the phrase
 const checkLetter = (button) => {
     let matched = null;
-    let letters = document.querySelectorAll('.letter')
-    for (i=0; i < letters.length; i++) {
-      if (button === letters[i].textContent.toLowerCase()) {
-        letters[i].classList.add('show');
+    let lettersFound = document.querySelectorAll('.letter')
+    for (i=0; i < lettersFound.length; i++) {
+      if (button === lettersFound[i].textContent.toLowerCase()) {
+        lettersFound[i].classList.add('show');
         matched = true;
       }
     }
@@ -66,14 +66,14 @@ const checkLetter = (button) => {
 
   const hearts = document.querySelector('.tries img');
 
-  // listen for 
+  // listen for clicks on the keyboard and disables button, counts misses and swich heart images
   qwerty.addEventListener('click', (e) => {
     if (e.target.tagName === "BUTTON") {
       e.target.className = 'chosen';
       e.target.disabled = true;
       const match = checkLetter(e.target.textContent.toLowerCase());
       if (match === null) {
-        hearts.src = 'images/lostHeart.png';
+        lives[missed].src ='images/lostHeart.png';
         missed++;
       }
 
@@ -83,22 +83,21 @@ const checkLetter = (button) => {
 
     //check if the game has been won or lost
     const checkWin = () => {
-      let letters = document.querySelectorAll('.letter')
+      let lettersFound = document.querySelectorAll('.letter')
       const title = document.querySelectorAll('.title');
       const show = document.querySelectorAll('.show');
-      if (letters.length === show.length) {
+      if (lettersFound.length === show.length) {
         overlay.classList.add('win')
         title.textContent = 'Winner Winner Chicken Dinner!';
         overLay.style.display = 'flex';
+        startButton.textContent = 'Try Again!';
       }
-      else {
-        if (missed > 4) {
+      else if (missed > 4) {
           overlay.classList.add('lose')
           title.textContent = 'You Are Out of Lives, Try Again!';
-          overLay.style.display = 'flex';         
+          overLay.style.display = 'flex';
+          startButton.textContent = 'Try Again!';
         }
-
-      }
     }
 
 

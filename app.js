@@ -9,8 +9,9 @@ let missed = 0;
 
 //listen for the start game button to be pressed 
   startButton.addEventListener('click', (e) => {
-     if (overlay.className == 'start' || overlay.className == 'win' || overlay.className == 'lose')
-      overLay.style.display = 'none';
+    const startOverLay = overLay;
+    if (startOverLay.className === 'start' || startOverLay.className ==='win' || startOverLay.className === 'lose')
+      startOverLay.style.display = 'none';
   });
 
 

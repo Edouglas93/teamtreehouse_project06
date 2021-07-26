@@ -91,13 +91,13 @@ const checkLetter = (button) => {
         overLay.classList.add('win')
         title.textContent = 'Winner Winner Chicken Dinner!';
         overLay.style.display = 'flex';
-        clearPhraseToDisplay()
+        startButton.textContent = "Try Again!"
       }
       else if (missed > 4) {
           overLay.classList.add('lose')
           title.textContent = 'You Are Out of Lives!!';
           overLay.style.display = 'flex';
-          clearPhraseToDisplay()
+          startButton.textContent = "Try Again!"
         }
     }
 
@@ -118,6 +118,10 @@ const checkLetter = (button) => {
       }
     }
 
+    //Reset the phrase at the end of the game 
+
+    function clearPhraseToDisplay() {
+    }
 
 
 

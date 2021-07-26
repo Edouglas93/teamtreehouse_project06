@@ -10,6 +10,9 @@ let missed = 0;
 //listen for the start game button to be pressed 
   startButton.addEventListener('click', (e) => {
       overLay.style.display = 'none';
+
+      keyBoardReset()
+      livesRestored()
   });
 
 
@@ -91,12 +94,14 @@ const checkLetter = (button) => {
         title.textContent = 'Winner Winner Chicken Dinner!';
         overLay.style.display = 'flex';
         startButton.textContent = "Try Again!"
+        clearPhraseToDisplay()
       }
       else if (missed > 4) {
           overLay.classList.add('lose')
           title.textContent = 'You Are Out of Lives!!';
           overLay.style.display = 'flex';
           startButton.textContent = "Try Again!"
+          clearPhraseToDisplay()
         }
     }
 
@@ -120,7 +125,7 @@ const checkLetter = (button) => {
     //Reset the phrase at the end of the game 
 
     function clearPhraseToDisplay() {
-      phraseUl.innerHTML = '';
+      phraseUl.innerHTML = ' ';
     }
 
 

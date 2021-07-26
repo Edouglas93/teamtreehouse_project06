@@ -91,13 +91,13 @@ const checkLetter = (button) => {
         overLay.classList.add('win')
         title.textContent = 'Winner Winner Chicken Dinner!';
         overLay.style.display = 'flex';
-        startButton.textContent = 'Try Again!';
+        clearPhraseToDisplay()
       }
       else if (missed > 4) {
           overLay.classList.add('lose')
           title.textContent = 'You Are Out of Lives!!';
           overLay.style.display = 'flex';
-          startButton.textContent = 'Try Again!';
+          clearPhraseToDisplay()
         }
     }
 

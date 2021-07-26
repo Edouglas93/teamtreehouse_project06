@@ -101,6 +101,14 @@ const checkLetter = (button) => {
         }
     }
 
+    // Clear keys funciton
+    function keyBoardReset() {
+      const keyBoardButton = document.getElementsByTagName('button');
+      for ( let i =0; i < keyBoardButton.length; i++) {
+        keyBoardButton[i].className = ' ';
+        keyBoardButton[i].disabled = false;
+      }
+    }
 
 
 

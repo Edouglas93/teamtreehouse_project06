@@ -86,7 +86,7 @@ const checkLetter = (button) => {
     //check if the game has been won or lost
     const checkWin = () => {
       let lettersFound = document.querySelectorAll('.letter')
-      const title = document.querySelectorAll('.title');
+      const title = document.querySelector('.title');
       const show = document.querySelectorAll('.show');
       if (lettersFound.length === show.length) {
         overlay.classList.add('win')

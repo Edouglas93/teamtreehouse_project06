@@ -3,8 +3,7 @@ const phrase = document.querySelector('#phrase');
 const startButton = document.querySelector('.btn__reset');
 const overLay = document.querySelector('#overlay');
 const lives = document.querySelectorAll('.tries img') ;
-const li = document.createElement('li');
-
+const phraseUl = document.querySelector('#phrase ul');
 
 let missed = 0;
 
@@ -121,6 +120,7 @@ const checkLetter = (button) => {
     //Reset the phrase at the end of the game 
 
     function clearPhraseToDisplay() {
+      phraseUl.innerHTML = '';
     }
 
 
